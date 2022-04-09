@@ -31,6 +31,7 @@ type (
 	Config struct {
 		Triggers map[string]TriggerConfig `yaml:"triggers,omitempty"`
 		Runners  map[string]RunnerConfig  `yaml:"runners,omitempty"`
+		RootDir  string                   `yaml:"root,omitempty"`
 	}
 )
 
