@@ -44,7 +44,10 @@ func (fc *FreqConfig) UnmarshalYAML(b []byte) error {
 
 	switch v := dest.(type) {
 	case int:
-		fc.MaxWaitMs, fc.MinWaitMs = v, v
+		*fc = FreqConfig{
+			MaxWaitMs: v,
+			MinWaitMs: v,
+		}
 		return nil
 	default:
 		return errors.New("invalid type error: (detected: " + reflect.TypeOf(dest).Name() + ")")
